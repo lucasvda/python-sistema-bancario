@@ -19,13 +19,16 @@ while True:
     opcao = input(menu)
 
     if opcao == "d":
-        saldo = int(input("Qual o valor a ser depositado?\n"))
-        extrato_depositos.append(saldo)
+        saldo = float(input("Qual o valor a ser depositado?\n"))
+        if saldo > 0:
+          extrato_depositos.append(saldo)
+        else:
+           print("Operação inválida, insira um valor positivo.")
             
                  
 
     elif opcao == "s":
-        saque = int(input("Qual o valor de saque?\n"))
+        saque = float(input("Qual o valor de saque?\n"))
 
         if numero_saques != LIMITE_SAQUES:
             if saque <= limite:
